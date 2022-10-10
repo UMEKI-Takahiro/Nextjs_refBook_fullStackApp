@@ -10,14 +10,14 @@ const useAuth = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      router.push("user/login");
+      router.push("/user/login");
     }
   
     try {
       const decoded = jwt.verify(token, secretKey);
       setLoginUser(decoded.email);
     } catch {
-      router.push("user/login");
+      router.push("/user/login");
     }
   }, [router]);
 
