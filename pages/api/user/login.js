@@ -16,7 +16,6 @@ const loginUser = async (req, res) => {
           email: req.body.email,
         };
         const token = jwt.sign(payload, secretKey, { expiresIn: "23h"});
-        console.log(token);
         return res.status(200).json({
           message: "ログイン成功",
           token,

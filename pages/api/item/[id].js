@@ -10,6 +10,7 @@ const getSingleItem = async (req, res) => {
       singleItem,
     });
   } catch (error) {
+    console.error(error);
     return res.status(400).send({
       message: "アイテム読み取り失敗（シングル）",
     });
