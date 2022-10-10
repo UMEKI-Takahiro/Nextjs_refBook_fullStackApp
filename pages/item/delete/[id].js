@@ -1,5 +1,6 @@
 import Image from "next/image";
 import useAuth from "../../../utils/useAuth";
+import Head from "next/head";
 
 const DeleteItem = (props) => {
   const handleSubmit = async (e) => {
