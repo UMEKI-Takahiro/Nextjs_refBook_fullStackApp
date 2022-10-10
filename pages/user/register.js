@@ -10,6 +10,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await fetch("https://nextjs-ref-book-full-stack-app.vercel.app/api/user/register", {
+      // const response = await fetch(`http://localhost:4000/api/user/register`, {
         method: "POST",
         headers: {
           "Accept": "application/json",

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useAuth from "../../utils/useAuth";
 import Head from "next/head"
+import ImgInput from "../../components/imgInput";
 
 const CreateItem = () => {
   const [title, setTitle] = useState("");
@@ -12,6 +13,7 @@ const CreateItem = () => {
     e.preventDefault();
     try {
       const response = await fetch("https://nextjs-ref-book-full-stack-app.vercel.app/api/item/create", {
+      // const response = await fetch(`http://localhost:4000/api/item/create`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -40,6 +42,7 @@ const CreateItem = () => {
       <div>
         <Head><title>アイテム作成</title></Head>
         <h1 className="page-title">アイテム作成</h1>
+        <ImgInput image={image} setImage={setImage} />
         <form onSubmit={handleSubmit}>
           <input value={title} onChange={e => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required />
           <input value={price} onChange={e => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required />
